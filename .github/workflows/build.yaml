@@ -35,6 +35,9 @@ jobs:
       run: cmake -E make_directory ${{github.workspace}}/build
 
     - name: Configure CMake
+      env:
+        CC: gcc-10
+        CXX: g++-10
       if: runner.os == 'Linux'
       shell: bash
       working-directory: ${{github.workspace}}/build
