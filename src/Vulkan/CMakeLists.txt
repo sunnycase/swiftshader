@@ -248,3 +248,15 @@ configure_file(
     "vk_swiftshader_icd.json.tmpl"
     "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_NAME}/vk_swiftshader_icd.json"
 )
+
+install(TARGETS vk_swiftshader EXPORT vk_swiftshaderTargets
+        COMPONENT vk-runtime
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin
+        INCLUDES DESTINATION include
+)
+
+install(FILES "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_NAME}/vk_swiftshader_icd.json"
+        COMPONENT vk-runtime
+        DESTINATION lib)

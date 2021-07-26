@@ -44,7 +44,8 @@
                 "${workspaceFolder}/third_party/SPIRV-Tools/include"
             ],
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++17",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
         },
         {
             "name": "Win32",

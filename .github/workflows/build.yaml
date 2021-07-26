@@ -30,7 +30,7 @@ jobs:
     - name: Add msbuild to PATH
       if: runner.os == 'Windows'
       uses: ilammy/msvc-dev-cmd@v1.9.0
-      
+
     - name: Create Build Environment
       run: cmake -E make_directory ${{github.workspace}}/build
 
@@ -57,7 +57,7 @@ jobs:
     - name: Install
       shell: bash
       working-directory: ${{github.workspace}}/build
-      run: cmake --install . --prefix ../install
+      run: cmake --install . --prefix ../install  --component vk-runtime
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
